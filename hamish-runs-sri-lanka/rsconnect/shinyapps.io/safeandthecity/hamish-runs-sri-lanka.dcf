@@ -5,8 +5,8 @@ account: safeandthecity
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1047601
-bundleId: 2258990
+bundleId: 2259005
 url: https://magrathj.shinyapps.io/hamish-runs-sri-lanka/
-when: 1563912818.02661
+when: 1563913589.5193
 asMultiple: FALSE
 asStatic: FALSE
