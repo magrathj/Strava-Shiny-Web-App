@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$font-family-sans-serif: 'Roboto';
+
+$dark: rgb(34,31,31);
+
+$primary: rgb(41,160,217);
+$secondary: rgb(36,170,88);
+$tertiary:  rgb(245,173,23);
+$quaternary: rgb(237, 44, 77);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$colors: $primary, $secondary, $tertiary, $quaternary;
+$repeat: 4;
+
+.bg-primary { background: $primary; }
+.bg-secondary { background: $secondary; }
+.bg-tertiary { background: $tertiary; }
+.bg-quaternary { background: $quaternary; }
+
+.jumbotron {
+  color: $white;
+  margin-bottom: 0;
+}
+
+.jumbotron-cta {
+  background-color: darken($primary, 5%);
+  padding: 25px;
+}
+
+.jumbotron-cta p {
+  margin: 0;
+  color: $white;
+  text-align: center;
+}
+
+.jumbotron-cta p a {
+  font-weight: bold;
+  color: $white;
+  text-decoration: underline;
+}
+
+.row-section {
+  border-bottom: 1px solid $gray-200;
+  padding: 6rem 0;
+  font-size: $font-size-sm;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.heading-separator {
+  display: block;
+  height: .375rem;
+  width: 4rem;
+  margin: 1.5rem 0;
+}
+
+.footer {
+  background: $dark;
+  color: $gray-600;
+  padding-bottom: 1rem;
+}
+
+.footer a {
+  color: $gray-600;
+}
+
+.footer-row {
+  padding: 6rem 0;
+}

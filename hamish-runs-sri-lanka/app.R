@@ -4,17 +4,16 @@ library(shiny)
 library(keyring)
 library(rjson)
 library(leaflet)
-source('global.R')
+#source('global.R')
 
 
 r_colors <- rgb(t(col2rgb(colors()) / 255))
 names(r_colors) <- colors()
 
-ui <- fluidPage(
-  leafletOutput("mymap"),
-  p(),
-  actionButton("recalc", "New points")
-)
+
+  
+ui <- htmlTemplate("www/index.html")
+
 
 server <- function(input, output, session) {
   
