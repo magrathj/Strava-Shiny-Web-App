@@ -2,8 +2,7 @@
 #key_set("Client-ID", "hammish-run") 
 #key_set("Client-Secret", "hammish-run") 
 #key_set("Refresh-Token", "hammish-run)
-
-API_KEY <- keyring::key_get("Access-Token", "hammish-run") 
+#API_KEY <- keyring::key_get("Access-Token", "hammish-run") 
 
 
 # Creates a GET request to retrieve data from an api
@@ -13,6 +12,7 @@ API_KEY <- keyring::key_get("Access-Token", "hammish-run")
 #   api_key your access token
 # Example: 
 # GET_Query("https://www.strava.com/api/v3/athlete", API_KEY)
+# GET_Query('https://www.strava.com/api/v3/activities/{id}?include_all_efforts=', API_KEY)
 GET_Query <- function(url, api_key){
   response <- httr::GET(url, add_headers(Authorization = paste("Bearer", api_key, sep = " ")))
   return(content(response))
@@ -34,10 +34,10 @@ refreshToken = function(api_key) {
                            body = list(refresh_token = keyring::key_get("Refresh-Token", "hammish-run"), 
                                        client_id = as.numeric(keyring::key_get("Client-ID", "hammish-run")),
                                        client_secret = keyring::key_get("Client-Secret", "hammish-run"), 
-                                       grant_type ="refresh_token"))))
+                                       grant_type ="refresh_token")))$access_token)
 }
 
-
+API_KEY <- refreshToken( keyring::key_get("Access-Token", "hammish-run") )
 
 
 

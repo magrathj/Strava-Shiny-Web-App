@@ -12,7 +12,10 @@ names(r_colors) <- colors()
 
 
   
-ui <- htmlTemplate("www/index.html")
+ui <- fluidPage(
+  theme = "bootstrap.min.css",
+  htmlTemplate("www/index.html")
+)
 
 
 server <- function(input, output, session) {
